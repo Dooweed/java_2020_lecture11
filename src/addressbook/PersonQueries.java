@@ -10,9 +10,7 @@ import java.util.ArrayList;
 
 public class PersonQueries 
 {
-   private static final String URL = "jdbc:derby:addressbook";
-   private static final String USERNAME = "deitel";
-   private static final String PASSWORD = "deitel";
+   private static final String URL = "jdbc:derby:./db/addressbook";
 
    private Connection connection; // manages connection
    private PreparedStatement selectAllPeople; 
@@ -25,7 +23,7 @@ public class PersonQueries
       try 
       {
          connection = 
-            DriverManager.getConnection(URL, USERNAME, PASSWORD);
+            DriverManager.getConnection(URL);
 
          // create query that selects all entries in the AddressBook
          selectAllPeople = 
